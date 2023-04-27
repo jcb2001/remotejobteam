@@ -177,7 +177,76 @@ Live chat assistants are in huge demand worldwide right now. So if you can start
   <script src="assets/theme/js/script.js"></script>
   
   
-  <script>
+  <script type="application/ld+json" id="jobPostingSchema">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Moderate Forum Chats ($259 per day)",
+  "description": "$37 per hour | Online/Remote Position | Flexible
+
+Job Description:
+
+This is a great opportunity for anyone who enjoys engaging in forum discussions. We are seeking good people to assist in moderating chats on behalf of a major client. The work can be done remotely, and flexible hours are available.
+
+As a chat moderator, you will monitor forum discussions to check that all posters are sticking to the rules. You will need to remove inappropriate posts and relocate posts that are in the wrong forum. This is easy work for anyone who finds online chat interesting.
+
+Rate: $37 per hour
+
+Requirements: You need to have access to a laptop, phone, or tablet and have a reliable internet connection. You also need to have at least basic English writing skills.
+
+Skills/background needed: These are beginner-level live chat jobs, so full training is provided, and you do not need to have done any paid live chat work before.
+
+Location: You can work remotely online from United States.
+
+Live chat assistants are in huge demand worldwide right now. So if you can start right away, please apply below.",
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 25,
+      "maxValue": 35,
+      "unitText": "HOUR"
+    }
+  },
+  "datePosted": "",
+  "employmentType": [
+    "FULL_TIME",
+    "PART_TIME",
+    "CONTRACTOR",
+    "TEMPORARY",
+    "INTERN",
+    "OTHER"
+  ],
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Remote Job Team",
+    "sameAs": "http://remotejobteam.com",
+    "logo": "https://i.imgur.com/xORxQjj.png"
+  },
+  "jobLocationType": "TELECOMMUTE",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    }
+  },
+  "experienceInPlaceOfEducation": "False",
+  "experienceRequirements": "No specific experience requirements",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/xORxQjj.png"
+  }
+}
+</script>
+<script>
   window.addEventListener('DOMContentLoaded', function() {
     const jobPostingSchema = document.getElementById('jobPostingSchema');
     const schemaJson = JSON.parse(jobPostingSchema.textContent);
