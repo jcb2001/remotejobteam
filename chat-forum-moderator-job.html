@@ -27,23 +27,7 @@
   
   
   
-  <script>
-  function updateSchemaDate() {
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
-    const currentDate = `${year}-${month}-${day}`;
-
-    const schemaElement = document.getElementById('job-posting-schema');
-    const schemaJson = JSON.parse(schemaElement.textContent);
-    schemaJson.datePosted = currentDate;
-
-    schemaElement.textContent = JSON.stringify(schemaJson, null, 2);
-  }
-
-  document.addEventListener('DOMContentLoaded', updateSchemaDate);
-</script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   
@@ -174,8 +158,8 @@
       }
     }
   </script>
-
-  <script>
+<script>
+  $(document).ready(function() {
     // Array of the 50 largest US cities
     const cities = [
       'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas',
@@ -185,14 +169,17 @@
       'Colorado Springs', 'Omaha', 'Raleigh', 'Miami', 'Long Beach', 'Virginia Beach', 'Oakland', 'Minneapolis', 'Tulsa', 'Arlington'
     ];
 
-    // Update datePosted and jobLocation in schema
-    const schemaScript = document.querySelector('script[type="application/ld+json"]');
-    const schema = JSON.parse(schemaScript.innerHTML);
-    const today = moment().format('YYYY-MM-DD');
-    schema.datePosted = today;
+    // Update datePosted in schema
+    const schemaScript = $('script[type="application/ld+json"]');
+    const schema = JSON.parse(schemaScript.html());
+    const today = new Date();
+    schema.datePosted = today.toISOString().split('T')[0];
+
+    // Update jobLocation in schema
     const randomCity = cities[Math.floor(Math.random() * cities.length)];
     schema.jobLocation.address.addressLocality = randomCity;
-    schemaScript.innerHTML = JSON.stringify(schema);
-  </script>
+    schemaScript.html(JSON.stringify(schema));
+  });
+</script>
 </body>
 </html>
