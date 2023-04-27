@@ -27,43 +27,163 @@
   
   
   
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="jobPostingSchema">
 {
-	"@context": "http://schema.org/",
-	"@type": "JobPosting",
-	"title" : "Moderate Forum Chats ($259 per day)",
-	"description" : "$37 per hour | Online/Remote Position | Flexible
-Job Description:
-This is a great opportunity for anyone who enjoys engaging in forum discussions. We are seeking good people to assist in moderating chats on behalf of a major client. The work can be done remotely, and flexible hours are available.
-As a chat moderator, you will monitor forum discussions to check that all posters are sticking to the rules. You will need to remove inappropriate posts and relocate posts that are in the wrong forum. This is easy work for anyone who finds online chat interesting.
-Rate: $37 per hour
-Requirements: You need to have access to a laptop, phone, or tablet and have a reliable internet connection. You also need to have at least basic English writing skills.
-Skills/background needed: These are beginner-level live chat jobs, so full training is provided, and you do not need to have done any paid live chat work before.
-Location: You can work remotely online from United States.
-Live chat assistants are in huge demand worldwide right now. So if you can start right away, please apply below.",
-	"datePosted" : "2023-04-23",
-	"jobLocationType" : "TELECOMMUTE",
-	"hiringOrganization": {
-		"@type": "Organization",
-		"sameAs": "http://remotejobforum.com",
-		"name": "Remote Job Forum"
-	},
-	"employmentType": ["FULL_TIME", "PART_TIME", "TEMPORARY"],
-	"baseSalary": {
-		"@type": "MonetaryAmount",
-		"currency": "USD",
-		"value": {
-			"@type": "QuantitativeValue",
-			"minValue": ,
-			"maxValue": 259,
-			"unitText": "DAY"
-		}
-	},
-	"applicantLocationRequirements": {
-		"@type": "Country",
-		"name": "United States"
-	}
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Moderate Forum Chats ($259 per day)",
+  "description": "<h2>Responsibilities of a Chat Moderator:</h2>
+<ul>
+	<li>Removing inappropriate posts and comments</li>
+	<li>Relocating posts that are in the wrong forum</li>
+	<li>Engaging in discussions to keep the conversation going</li>
+	<li>Ensuring that all forum participants are following community guidelines</li>
+</ul>
+
+<p>This is a great opportunity for anyone who enjoys engaging in online discussions and has an interest in forum moderation.</p>
+
+<h2>Compensation and Hours:</h2>
+<p>We offer a competitive rate of $37 per hour for this position. This is a flexible, online position that can be done remotely. You will have the freedom to work at your own pace and set your own hours.</p>
+
+<h2>Requirements:</h2>
+<p>To be considered for this position, you will need to have access to a laptop, phone, or tablet, and a reliable internet connection. You will also need to have at least basic English writing skills. This is a beginner-level position, so no prior experience is required. We provide full training to all our chat moderators.</p>
+
+<h2>FAQ About Remote Work:</h2>
+<h3>Q: What is remote work?</h3>
+<p>A: Remote work refers to working from a location other than a traditional office setting. It typically involves working from home or a remote location.</p>
+
+<h3>Q: What are the benefits of remote work?</h3>
+<p>A: Remote work allows for greater flexibility, work-life balance, and the ability to work from anywhere in the world.</p>
+
+<h3>Q: How do I stay connected with my team while working remotely?</h3>
+<p>A: There are many tools available to help you stay connected with your team, such as video conferencing software and instant messaging apps.</p>
+
+<h2>About Remote Job Forum:</h2>
+<p>Remote Job Forum is a leading job board that specializes in remote and work-from-home positions. Our mission is to connect job seekers with top employers who offer flexible and remote work options. We take pride in offering a wide variety of job opportunities in various industries and niches.</p>
+
+<h2>Apply Now:</h2>
+<p>If you are interested in this exciting opportunity, we encourage you to apply now. Live chat assistants are in huge demand worldwide, and this is your chance to get in on the action. Apply today and start earning $37 per hour from the comfort of your own home!</p>
+",
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 25,
+      "maxValue": 35,
+      "unitText": "HOUR"
+    }
+  },
+  "datePosted": "",
+  "employmentType": [
+    "FULL_TIME",
+    "PART_TIME",
+    "CONTRACTOR",
+    "TEMPORARY",
+    "INTERN",
+    "OTHER"
+  ],
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Remote Job Team",
+    "sameAs": "http://remotejobteam.com",
+    "logo": "https://i.imgur.com/xORxQjj.png"
+  },
+  "jobLocationType": "TELECOMMUTE",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress"
+    }
+  },
+  "experienceInPlaceOfEducation": "False",
+  "experienceRequirements": "No specific experience requirements",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/xORxQjj.png"
+  }
 }
+</script>
+
+<script>
+const cities = [
+  "New York",
+  "Los Angeles",
+  "Chicago",
+  "Houston",
+  "Phoenix",
+  "Philadelphia",
+  "San Antonio",
+  "San Diego",
+  "Dallas",
+  "San Jose",
+  "Austin",
+  "Jacksonville",
+  "Fort Worth",
+  "Columbus",
+  "Charlotte",
+  "San Francisco",
+  "Indianapolis",
+  "Seattle",
+  "Denver",
+  "Washington",
+  "Boston",
+  "El Paso",
+  "Nashville",
+  "Detroit",
+  "Oklahoma City",
+  "Portland",
+  "Las Vegas",
+  "Memphis",
+  "Louisville",
+  "Baltimore",
+  "Milwaukee",
+  "Albuquerque",
+  "Tucson",
+  "Fresno",
+  "Sacramento",
+  "Mesa",
+  "Kansas City",
+  "Atlanta",
+  "Long Beach",
+  "Omaha",
+  "Raleigh",
+  "Colorado Springs",
+  "Miami",
+  "Virginia Beach",
+  "Oakland",
+  "Minneapolis",
+  "Tulsa",
+  "Arlington",
+  "New Orleans"
+];
+
+function getRandomCity() {
+  const randomIndex = Math.floor(Math.random() * cities.length);
+  return cities[randomIndex];
+}
+
+function updateDatePostedAndCity() {
+  const schemaElement = document.getElementById('jobPostingSchema');
+  const schema = JSON.parse(schemaElement.innerHTML);
+
+  // Update date
+  const today = new Date();
+  const dateString = today.toISOString().split('T')[0];
+  schema.datePosted = dateString;
+
+  // Update city
+  const randomCity = getRandomCity();
+  schema.jobLocation.address.addressLocality = randomCity;
+
+  schemaElement.innerHTML = JSON.stringify(schema);
+}
+
+updateDatePostedAndCity();
 </script>
 </head>
 <body>
@@ -75,7 +195,7 @@ Live chat assistants are in huge demand worldwide right now. So if you can start
             <div class="navbar-brand">
                 <span class="navbar-logo">
                     <a href="index.html">
-                        <img src="assets/images/copy-of-copy-of-remote-job-recruiting-3-294x122.png" alt="" style="height: 5.2rem;">
+                        <img src="assets/images/remote-job-forum-1-170x96.png" alt="" style="height: 5.2rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="#"></a></span>
@@ -89,7 +209,7 @@ Live chat assistants are in huge demand worldwide right now. So if you can start
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html">Home</a></li><li class="nav-item dropdown"><a class="nav-link link text-black text-primary dropdown-toggle display-4" href="index.html" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Open Jobs</a><div class="dropdown-menu" aria-labelledby="dropdown-102"><a class="text-black text-primary dropdown-item display-4" href="remote-live-chat-jobs.html">Live Chat Assistants - Hiring Now!</a><a class="text-black text-primary show dropdown-item display-4" href="chat-forum-moderator-job.html">Moderate Forum Chats ($259 per day)</a><a class="text-black text-primary show dropdown-item display-4" href="walmart-customer-support-jobs.html">$280 per day - Walmart Customer Support</a><a class="text-black text-primary show dropdown-item display-4" href="part-time-live-chat-job.html">$2,000/month Part-Time Live Chat Job</a><a class="text-black text-primary show dropdown-item display-4" href="facebook-chat-assistant-job.html">Facebook Live Chat Assistant</a><a class="text-black text-primary show dropdown-item display-4" href="live-chat-assistant-280-per-day.html">Live Chat Assistant ($280 per day)</a><a class="text-black text-primary show dropdown-item display-4" href="shopify-chat-assistant-job.html">Shopify Staff - $280 per Day</a><a class="text-black text-primary dropdown-item display-4" href="amazon-chat-assistant-job.html">$296.00 per day - Amazon Chat Assistant</a><a class="text-black text-primary show dropdown-item display-4" href="get-paid-to-talk-job.html">Get Paid to Talk (No Phone Calls: $280 per day)</a><a class="text-black text-primary show dropdown-item display-4" href="skype-chat-jobs.html">$280.00 per day: Chat on Skype</a></div></li></ul>
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html">Home</a></li><li class="nav-item dropdown"><a class="nav-link link text-black text-primary dropdown-toggle show display-4" href="index.html" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Open Jobs</a><div class="dropdown-menu show" aria-labelledby="dropdown-102" data-bs-popper="none"><a class="text-black text-primary dropdown-item display-4" href="remote-live-chat-jobs.html">Live Chat Assistants - Hiring Now!</a><a class="text-black text-primary show dropdown-item display-4" href="chat-forum-moderator-job.html">Moderate Forum Chats ($259 per day)</a><a class="text-black text-primary show dropdown-item display-4" href="walmart-customer-support-jobs.html">$280 per day - Walmart Customer Support</a><a class="text-black text-primary show dropdown-item display-4" href="part-time-live-chat-job.html">$2,000/month Part-Time Live Chat Job</a><a class="text-black text-primary show dropdown-item display-4" href="facebook-chat-assistant-job.html">Facebook Live Chat Assistant</a><a class="text-black text-primary show dropdown-item display-4" href="live-chat-assistant-280-per-day.html">Live Chat Assistant ($280 per day)</a><a class="text-black text-primary show dropdown-item display-4" href="shopify-chat-assistant-job.html">Shopify Staff - $280 per Day</a><a class="text-black text-primary dropdown-item display-4" href="amazon-chat-assistant-job.html">$296.00 per day - Amazon Chat Assistant</a><a class="text-black text-primary show dropdown-item display-4" href="get-paid-to-talk-job.html">Get Paid to Talk (No Phone Calls: $280 per day)</a><a class="text-black text-primary show dropdown-item display-4" href="skype-chat-jobs.html">$280.00 per day: Chat on Skype</a></div></li></ul>
                 
                 <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="https://swiy.co/LiveChatJobs" target="_blank">Apply Now</a></div>
             </div>
@@ -131,7 +251,7 @@ Live chat assistants are in huge demand worldwide right now. So if you can start
             
             <div class="row row-copirayt">
                 <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-4">
-                    © Copyright 2023 Remote Job Team. All Rights Reserved.<br><br>Please note that Remote Job Forum is NOT a recruitment agency. We are not an agent or representative of any employer.<br><br>Marketing Disclosure: This website is a market place. As such you should know that the owner has a monetary connection to the product and services advertised on the site. The owner receives payment whenever a qualified lead is referred.<br>
+                    © Copyright 2023 Remote Job Forum. All Rights Reserved.<br><br>Please note that Remote Job Forum is NOT a recruitment agency. We are not an agent or representative of any employer.<br><br>Marketing Disclosure: This website is a market place. As such you should know that the owner has a monetary connection to the product and services advertised on the site. The owner receives payment whenever a qualified lead is referred.<br>
                 </p>
             </div>
         </div>
