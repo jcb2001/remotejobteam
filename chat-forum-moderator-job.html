@@ -27,12 +27,12 @@
   
   
   
-  <script type="application/ld+json" id="jobPostingSchema">
-{
-  "@context": "https://schema.org",
-  "@type": "JobPosting",
-  "title": "Moderate Forum Chats ($259 per day)",
-  "description": "$37 per hour | Online/Remote Position | Flexible
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Moderate Forum Chats ($259 per day)",
+    "description": "$37 per hour | Online/Remote Position | Flexible
 
 Job Description:
 
@@ -49,127 +49,54 @@ Skills/background needed: These are beginner-level live chat jobs, so full train
 Location: You can work remotely online from United States.
 
 Live chat assistants are in huge demand worldwide right now. So if you can start right away, please apply below.",
-  "baseSalary": {
-    "@type": "MonetaryAmount",
-    "currency": "USD",
-    "value": {
-      "@type": "QuantitativeValue",
-      "minValue": 25,
-      "maxValue": 35,
-      "unitText": "HOUR"
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": {
+        "@type": "QuantitativeValue",
+        "minValue": 25,
+        "maxValue": 35,
+        "unitText": "HOUR"
+      }
+    },
+    "datePosted": "",
+    "employmentType": [
+      "FULL_TIME",
+      "PART_TIME",
+      "CONTRACTOR",
+      "TEMPORARY",
+      "INTERN",
+      "OTHER"
+    ],
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Remote Job Team",
+      "sameAs": "http://remotejobteam.com",
+      "logo": "https://i.imgur.com/xORxQjj.png"
+    },
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      }
+    },
+    "experienceInPlaceOfEducation": "False",
+    "experienceRequirements": {
+      "@type": "OccupationalExperienceRequirements"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://i.imgur.com/xORxQjj.png"
     }
-  },
-  "datePosted": "",
-  "employmentType": [
-    "FULL_TIME",
-    "PART_TIME",
-    "CONTRACTOR",
-    "TEMPORARY",
-    "INTERN",
-    "OTHER"
-  ],
-  "hiringOrganization": {
-    "@type": "Organization",
-    "name": "Remote Job Team",
-    "sameAs": "http://remotejobteam.com",
-    "logo": "https://i.imgur.com/xORxQjj.png"
-  },
-  "jobLocationType": "TELECOMMUTE",
-  "applicantLocationRequirements": {
-    "@type": "Country",
-    "name": "United States"
-  },
-  "jobLocation": {
-    "@type": "Place",
-    "address": {
-      "@type": "PostalAddress"
-    }
-  },
-  "experienceInPlaceOfEducation": "False",
-  "experienceRequirements": "No specific experience requirements",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://i.imgur.com/xORxQjj.png"
   }
-}
-</script>
-
-<script>
-const cities = [
-  "New York",
-  "Los Angeles",
-  "Chicago",
-  "Houston",
-  "Phoenix",
-  "Philadelphia",
-  "San Antonio",
-  "San Diego",
-  "Dallas",
-  "San Jose",
-  "Austin",
-  "Jacksonville",
-  "Fort Worth",
-  "Columbus",
-  "Charlotte",
-  "San Francisco",
-  "Indianapolis",
-  "Seattle",
-  "Denver",
-  "Washington",
-  "Boston",
-  "El Paso",
-  "Nashville",
-  "Detroit",
-  "Oklahoma City",
-  "Portland",
-  "Las Vegas",
-  "Memphis",
-  "Louisville",
-  "Baltimore",
-  "Milwaukee",
-  "Albuquerque",
-  "Tucson",
-  "Fresno",
-  "Sacramento",
-  "Mesa",
-  "Kansas City",
-  "Atlanta",
-  "Long Beach",
-  "Omaha",
-  "Raleigh",
-  "Colorado Springs",
-  "Miami",
-  "Virginia Beach",
-  "Oakland",
-  "Minneapolis",
-  "Tulsa",
-  "Arlington",
-  "New Orleans"
-];
-
-function getRandomCity() {
-  const randomIndex = Math.floor(Math.random() * cities.length);
-  return cities[randomIndex];
-}
-
-function updateDatePostedAndCity() {
-  const schemaElement = document.getElementById('jobPostingSchema');
-  const schema = JSON.parse(schemaElement.innerHTML);
-
-  // Update date
-  const today = new Date();
-  const dateString = today.toISOString().split('T')[0];
-  schema.datePosted = dateString;
-
-  // Update city
-  const randomCity = getRandomCity();
-  schema.jobLocation.address.addressLocality = randomCity;
-
-  schemaElement.innerHTML = JSON.stringify(schema);
-}
-
-updateDatePostedAndCity();
-</script>
+  </script>
+</head>
 </head>
 <body>
   
@@ -251,6 +178,27 @@ updateDatePostedAndCity();
   <script src="assets/theme/js/script.js"></script>
   
   
-  
+  <script>
+    // Array of the 50 largest US cities
+    const cities = [
+      'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio', 'San Diego', 'Dallas',
+      'San Jose', 'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'Charlotte', 'San Francisco', 'Indianapolis', 'Seattle',
+      'Denver', 'Washington', 'Boston', 'El Paso', 'Nashville', 'Detroit', 'Oklahoma City', 'Portland', 'Las Vegas', 'Memphis',
+      'Louisville', 'Baltimore', 'Milwaukee', 'Albuquerque', 'Tucson', 'Fresno', 'Mesa', 'Sacramento', 'Atlanta', 'Kansas City',
+      'Colorado Springs', 'Omaha', 'Raleigh', 'Miami', 'Long Beach', 'Virginia Beach', 'Oakland', 'Minneapolis', 'Tulsa', 'Arlington'
+    ];
+
+    // Update datePosted in schema
+    const schemaScript = document.querySelector('script[type="application/ld+json"]');
+    const schema = JSON.parse(schemaScript.innerHTML);
+    const today = new Date();
+    schema.datePosted = today.toISOString().split('T')[0];
+    schemaScript.innerHTML = JSON.stringify(schema);
+
+    // Update jobLocation in schema
+    const randomCity = cities[Math.floor(Math.random() * cities.length)];
+    schema.jobLocation.address.addressLocality = randomCity;
+    schemaScript.innerHTML = JSON.stringify(schema);
+  </script>
 </body>
 </html>
