@@ -27,43 +27,57 @@
   
   
   
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="jobPostingSchema">
 {
-	"@context": "http://schema.org/",
-	"@type": "JobPosting",
-	"title" : "Get Paid to Talk (No Phone Calls: $280 per day)",
-	"description" : "
-$35 per hour | Online/Remote Position | Flexible
-Job Description:
-If you are able to talk to people in English, we would like to hear from you. You do NOT need to talk to anyone on the phone as all the work is done in online chat. You can be based anywhere in the world but should be able to hold simple conversations.
-We need live chat assistants who can reply to messages from website visitors. You will answer customer questions using the chat facility. You need to be polite and helpful, ready to assist where you can. You may need to answer questions, send discount coupons or pass messages on to others.
-Rate:$35 per hour
-Requirements: You need to have access to a laptop, phone, or tablet and have a reliable internet connection. You also need to have at least basic English writing skills.
-Skills/background needed:These are beginner-level live chat jobs, so full training is provided, and you do not need to have done any paid live chat work before.
-Location: You can work remotely online from United States.
-Live chat assistants are in huge demand worldwide right now. So if you can start right away, please apply below.",
-	"datePosted" : "2023-04-23",
-	"jobLocationType" : "TELECOMMUTE",
-	"hiringOrganization": {
-		"@type": "Organization",
-		"sameAs": "http://remotejobforum.com",
-		"name": "Remote Job Forum"
-	},
-	"employmentType": ["FULL_TIME", "PART_TIME", "TEMPORARY"],
-	"baseSalary": {
-		"@type": "MonetaryAmount",
-		"currency": "USD",
-		"value": {
-			"@type": "QuantitativeValue",
-			"minValue": ,
-			"maxValue": 280.00,
-			"unitText": "DAY"
-		}
-	},
-	"applicantLocationRequirements": {
-		"@type": "Country",
-		"name": "United States"
-	}
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Remote Chat Assistant (No Phone Calls) - $35/hr (Remote)",
+  "description": "<p>$35 per hour | Online/Remote Position | Flexible</p><br><p>Job Description:</p><br><p>If you are able to talk to people in English, we would like to hear from you. You do NOT need to talk to anyone on the phone as all the work is done in online chat. You can be based anywhere in the world but should be able to hold simple conversations.</p><br><p>We need live chat assistants who can reply to messages from website visitors. You will answer customer questions using the chat facility. You need to be polite and helpful, ready to assist where you can. You may need to answer questions, send discount coupons or pass messages on to others.</p><br><p>Rate: $35 per hour</p><br><p>Requirements: You need to have access to a laptop, phone, or tablet and have a reliable internet connection. You also need to have at least basic English writing skills.</p><br><p>Skills/background needed: These are beginner-level live chat jobs, so full training is provided, and you do not need to have done any paid live chat work before.</p><br><p>Location: You can work remotely online from Houston, Texas, United States.</p><br><p>Live chat assistants are in huge demand worldwide right now. So if you can start right away, please apply below.</p>",
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": {
+      "@type": "QuantitativeValue",
+      "minValue": 35,
+      "maxValue": 35,
+      "unitText": "HOUR"
+    }
+  },
+  "datePosted": "2023-04-28",
+  "employmentType": [
+    "FULL_TIME",
+    "PART_TIME",
+    "CONTRACTOR",
+    "TEMPORARY",
+    "INTERN",
+    "OTHER"
+  ],
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "Remote Job Team",
+    "sameAs": "http://remotejobteam.com",
+    "logo": "https://i.imgur.com/xORxQjj.png"
+  },
+  "jobLocationType": "TELECOMMUTE",
+  "applicantLocationRequirements": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "United States",
+      "addressLocality": "Houston",
+      "addressRegion": "Texas"
+    }
+  },
+  "experienceInPlaceOfEducation": "False",
+  "experienceRequirements": "No specific experience requirements",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://i.imgur.com/xORxQjj.png"
+  }
 }
 </script>
 </head>
